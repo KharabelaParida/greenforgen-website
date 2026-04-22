@@ -225,32 +225,44 @@ export default function ServicesPage() {
           color: #fff !important;
         }
         @media (max-width: 768px) {
-          .svc-service-grid {
-            grid-template-columns: 1fr !important;
-          }
-          .svc-process-step {
-            grid-template-columns: 1fr !important;
-          }
-          .svc-process-step .svc-text-right {
-            text-align: left !important;
-          }
-          .svc-process-step .svc-flex-end {
-            justify-content: flex-start !important;
-          }
-          .svc-process-step .svc-pad-right {
-            padding-right: 0 !important;
-            padding-left: 50px !important;
-          }
-          .svc-process-line {
-            display: none !important;
-          }
-          .svc-pills-row {
-            display: none !important;
-          }
-          .svc-image-order-first {
-            order: -1 !important;
-          }
-        }
+  .svc-service-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .svc-image-order-first {
+    order: 2 !important;
+  }
+  .svc-process-step {
+    grid-template-columns: 1fr !important;
+  }
+  .svc-process-step .svc-text-right {
+    text-align: left !important;
+  }
+  .svc-process-step .svc-flex-end {
+    justify-content: flex-start !important;
+  }
+  .svc-process-step .svc-pad-right {
+    padding-right: 0 !important;
+    padding-left: 50px !important;
+  }
+  .svc-process-line {
+    display: none !important;
+  }
+  .svc-pills-row {
+    display: none !important;
+  }
+  .svc-process-image {
+    display: none !important;
+  }
+}
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+  .svc-service-grid {
+    gap: 28px !important;
+  }
+  .svc-process-step {
+    gap: 12px !important;
+  }
+}
       `}</style>
 
       <FadeIn>
@@ -413,11 +425,11 @@ export default function ServicesPage() {
                             </div>
                             <p className="svc-pad-right" style={{ fontSize: "14px", color: "#666666", lineHeight: 1.7, paddingRight: "50px" }}>{step.desc}</p>
                           </div>
-                          <ProcessImagePlaceholder label={step.title} />
+                          <div className="svc-process-image"><ProcessImagePlaceholder label={step.title} /></div>
                         </>
                       ) : (
                         <>
-                          <ProcessImagePlaceholder label={step.title} />
+                          <div className="svc-process-image"><ProcessImagePlaceholder label={step.title} /></div>
                           <div style={{ padding: "8px 0" }}>
                             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
                               <div style={{ width: "40px", height: "40px", borderRadius: "50%", backgroundColor: "#2D5A27", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "16px", fontWeight: 600, flexShrink: 0, border: "3px solid #E8F5E0" }}>

@@ -15,7 +15,7 @@ export default function HomePage() {
       <About />
       <Testimonials />
       <CTA />
-      <Footer />
+      
     </>
   );
 }
